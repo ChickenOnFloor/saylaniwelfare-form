@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 1,
       ease: "back.out(1.7)"
     });
-  
+    const SUPABASE_URL = 'https://olglrgpbomzladcdbgjf.supabase.co'
+    const SUPABASE_KEY = 'YOUR_SUPABASE_ANON_KEY'
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
     button.addEventListener("click", async function(event) {
       event.preventDefault();
       button.disabled = true;
@@ -136,3 +138,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
+
