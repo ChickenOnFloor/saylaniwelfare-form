@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         has_laptop: document.getElementById("laptop").value === "yes" ? true : false
       };
   
-      // Simple validation
       for (const key in data) {
         if (key !== "father_cnic" && (!data[key] || data[key] === "")) {
           alert(`Please fill in: ${key.replace(/_/g, " ")}`);
@@ -121,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
           data.profile_picture_url = null;
         }
   
-        // Save data
         const { data: result, error } = await supabase.from("students").insert([data]).select();
         if (error) {
           alert("Error: " + error.message);
@@ -136,4 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
       button.innerHTML = oldText;
     });
   });
+
   
